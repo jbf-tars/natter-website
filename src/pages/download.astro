@@ -15,28 +15,26 @@ import { release } from "../data/release";
       </p>
 
       <div class="mt-12 grid gap-6 sm:grid-cols-2">
-        <!-- macOS -->
         <a
           href={release.macUrl}
-          class="glass group flex flex-col items-center gap-4 rounded-2xl p-8 transition-all hover:border-primary/40"
+          class="surface-card group flex flex-col items-center gap-4 rounded-2xl p-8 transition-all hover:border-primary/30"
         >
           <svg class="h-12 w-12 text-text-muted group-hover:text-text transition-colors" fill="currentColor" viewBox="0 0 24 24">
             <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
           </svg>
           <span class="text-lg font-semibold text-text">Download for macOS</span>
-          <span class="text-sm text-text-muted">.dmg &middot; Intel & Apple Silicon</span>
+          <span class="text-sm text-text-muted">.dmg · Intel & Apple Silicon</span>
         </a>
 
-        <!-- Windows -->
         <a
           href={release.winUrl}
-          class="glass group flex flex-col items-center gap-4 rounded-2xl p-8 transition-all hover:border-primary/40"
+          class="surface-card group flex flex-col items-center gap-4 rounded-2xl p-8 transition-all hover:border-primary/30"
         >
           <svg class="h-12 w-12 text-text-muted group-hover:text-text transition-colors" fill="currentColor" viewBox="0 0 24 24">
             <path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801"/>
           </svg>
           <span class="text-lg font-semibold text-text">Download for Windows</span>
-          <span class="text-sm text-text-muted">.exe &middot; Windows 10+</span>
+          <span class="text-sm text-text-muted">.exe · Windows 10+</span>
         </a>
       </div>
 
@@ -44,7 +42,6 @@ import { release } from "../data/release";
         Natter is a desktop app. Visit this page on your Mac or PC to download.
       </p>
 
-      <!-- System Requirements -->
       <div class="mt-16 text-left">
         <h2 class="text-xl font-semibold text-text">System Requirements</h2>
         <div class="mt-6 grid gap-8 sm:grid-cols-2">
@@ -73,7 +70,7 @@ import { release } from "../data/release";
 
       <div class="mt-12">
         <p class="text-sm text-text-muted">
-          Version {release.version} &middot; Released {new Date(release.date).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })}
+          Version {release.version} · Released {new Date(release.date).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })}
         </p>
       </div>
     </div>

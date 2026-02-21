@@ -2,25 +2,22 @@
 import DownloadButton from "../ui/DownloadButton.astro";
 ---
 
-<section class="px-6 py-24">
-  <div class="relative mx-auto max-w-4xl overflow-hidden rounded-3xl px-8 py-16 text-center md:px-16 md:py-24">
-    <!-- Gradient background -->
-    <div class="absolute inset-0 bg-gradient-to-br from-primary/20 via-dark/10 to-bg" aria-hidden="true"></div>
-    <div class="absolute inset-0 glass" aria-hidden="true"></div>
-
-    <div class="relative z-10">
-      <h2 class="text-3xl font-bold md:text-5xl">
-        Ready to stop typing?
+<!-- Dark rounded section -->
+<div class="px-4 md:px-8 py-2">
+  <section class="dark-section mx-auto max-w-7xl section-loose px-8 md:px-16 text-center">
+    <div class="relative z-10 mx-auto max-w-2xl">
+      <h2 class="anim-scale font-serif text-4xl md:text-6xl leading-[1.1]">
+        <span class="font-light text-text-on-dark">Ready to</span> <span class="font-bold text-primary">stop typing?</span>
       </h2>
-      <p class="mx-auto mt-4 max-w-md text-text-muted md:text-lg">
-        Join thousands who've switched from keyboard to voice. Download Natter and start talking.
+      <p class="anim-fade anim-delay-1 mx-auto mt-6 max-w-md text-text-muted-on-dark md:text-lg">
+        You've read enough. Time to talk. Download Natter and start thinking out loud.
       </p>
-      <div class="mt-8">
+      <div class="anim-scale anim-delay-2 mt-10">
         <DownloadButton size="lg" />
       </div>
-      <p class="mt-4 text-xs text-text-muted/60">
-        Free 7-day trial. No signup required.
+      <p class="anim-fade anim-delay-3 mt-6 text-sm text-text-muted-on-dark">
+        macOS & Windows · Setup in 60 seconds · No subscription
       </p>
     </div>
-  </div>
-</section>
+  </section>
+</div>

@@ -1,0 +1,116 @@
+---
+const audiences = [
+  {
+    id: "developers",
+    label: "Developers",
+    headline: "Code with your voice. Seriously.",
+    body: "Describe what you want to build. Agentic Engineer mode translates your intent into structured prompts — functions, components, documentation — directly in VS Code or Cursor.",
+    mode: "Agentic Engineer",
+  },
+  {
+    id: "writers",
+    label: "Writers",
+    headline: "First drafts at the speed of thought",
+    body: "Stop staring at a blank page. Start talking, watch your draft appear. Ramble mode turns your stream of consciousness into structured prose.",
+    mode: "Ramble",
+  },
+  {
+    id: "founders",
+    label: "Founders",
+    headline: "Write emails in 12 seconds, not 12 minutes",
+    body: "Investor updates, customer replies, Slack messages, hiring posts — just say it. Normal mode gives you clean, accurate text in every app you use.",
+    mode: "Normal",
+  },
+  {
+    id: "students",
+    label: "Students",
+    headline: "Your lectures. Your notes. Your words.",
+    body: "Capture ideas faster than any keyboard. With local processing, your research and notes never touch a server. 50+ languages for international coursework.",
+    mode: "Normal",
+  },
+  {
+    id: "accessibility",
+    label: "Accessibility",
+    headline: "Your hands deserve a rest",
+    body: "Repetitive strain is real. Natter lets you keep working without the pain. Every app, every text field, no compromise on productivity.",
+    mode: "All modes",
+  },
+];
+---
+
+<section class="section-normal px-6">
+  <div class="mx-auto max-w-5xl">
+    <h2 class="anim-slide-left text-3xl font-bold md:text-4xl">Built for you</h2>
+
+    <!-- Tab pills -->
+    <div class="anim-fade anim-delay-1 mt-8 flex flex-wrap gap-2" role="tablist">
+      {audiences.map((a, i) => (
+        <button
+          role="tab"
+          aria-selected={i === 0 ? "true" : "false"}
+          data-tab={a.id}
+          class:list={[
+            "tab-pill rounded-full px-5 py-2 text-sm font-medium cursor-pointer",
+            i === 0
+              ? "bg-primary text-white"
+              : "bg-bg-subtle text-text-muted hover:text-text",
+          ]}
+        >
+          {a.label}
+        </button>
+      ))}
+    </div>
+
+    <!-- Tab panels -->
+    {audiences.map((a, i) => (
+      <div
+        data-panel={a.id}
+        role="tabpanel"
+        class:list={[
+          "tab-panel mt-10 grid md:grid-cols-2 gap-8 items-center",
+          i !== 0 ? "hidden" : "",
+        ]}
+      >
+        <div>
+          <p class="text-xs font-semibold text-primary uppercase tracking-wider mb-3">{a.mode} mode</p>
+          <h3 class="text-2xl font-bold md:text-3xl">{a.headline}</h3>
+          <p class="mt-4 text-text-muted leading-relaxed">{a.body}</p>
+        </div>
+        <div class="surface-card rounded-2xl p-8 text-center">
+          <p class="text-6xl mb-4" aria-hidden="true">
+            {a.id === "developers" ? "👨‍💻" : a.id === "writers" ? "✍️" : a.id === "founders" ? "🚀" : a.id === "students" ? "📚" : "♿"}
+          </p>
+          <p class="text-sm font-semibold text-text">{a.label}</p>
+          <p class="mt-1 text-xs text-text-muted">Use {a.mode} mode</p>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
+<script>
+  const pills = document.querySelectorAll<HTMLButtonElement>(".tab-pill");
+  const panels = document.querySelectorAll<HTMLElement>(".tab-panel");
+
+  pills.forEach((pill) => {
+    pill.addEventListener("click", () => {
+      const target = pill.dataset.tab!;
+
+      pills.forEach((p) => {
+        const isActive = p.dataset.tab === target;
+        p.setAttribute("aria-selected", String(isActive));
+        if (isActive) {
+          p.classList.add("bg-primary", "text-white");
+          p.classList.remove("bg-bg-subtle", "text-text-muted");
+        } else {
+          p.classList.remove("bg-primary", "text-white");
+          p.classList.add("bg-bg-subtle", "text-text-muted");
+        }
+      });
+
+      panels.forEach((panel) => {
+        panel.classList.toggle("hidden", panel.dataset.panel !== target);
+      });
+    });
+  });
+</script>

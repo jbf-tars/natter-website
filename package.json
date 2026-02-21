@@ -6,10 +6,12 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "deploy": "astro build && wrangler pages deploy dist --project-name natter-website"
   },
   "dependencies": {
     "@fontsource-variable/inter": "^5.2.8",
+    "@fontsource-variable/source-serif-4": "^5.2.9",
     "@tailwindcss/vite": "^4.2.0",
     "astro": "^5.17.1",
     "tailwindcss": "^4.2.0"

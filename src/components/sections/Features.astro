@@ -12,28 +12,40 @@ const iconMap: Record<string, string> = {
 };
 ---
 
-<section id="features" class="px-6 py-24">
-  <div class="mx-auto max-w-5xl">
-    <h2 class="reveal text-center text-3xl font-bold md:text-4xl">
-      Everything you need to talk, not type
-    </h2>
-    <p class="reveal mx-auto mt-4 max-w-xl text-center text-text-muted">
-      Voice input should be effortless. Natter handles transcription, cleanup,
-      and pasting — you just speak.
-    </p>
+<!-- Dark rounded section -->
+<div id="features" class="px-4 md:px-8 py-2">
+  <section class="dark-section mx-auto max-w-7xl section-normal px-6 md:px-12">
+    <div class="mx-auto max-w-5xl">
+      <div class="anim-slide-right text-right">
+        <h2 class="text-3xl font-bold md:text-4xl text-text-on-dark">
+          What happens when typing gets out of the way
+        </h2>
+        <p class="ml-auto mt-4 max-w-xl text-text-muted-on-dark">
+          Voice input should be effortless. Natter handles transcription, cleanup,
+          and pasting — you just speak.
+        </p>
+      </div>
 
-    <div class="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-      {
-        features.map((feature, i) => (
-          <GlassCard class={`reveal reveal-delay-${(i % 3) + 1}`}>
-            <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10">
-              <Fragment set:html={iconMap[feature.icon]} />
-            </div>
-            <h3 class="mt-4 text-base font-semibold text-text">{feature.title}</h3>
-            <p class="mt-2 text-sm leading-relaxed text-text-muted">{feature.description}</p>
-          </GlassCard>
-        ))
-      }
+      <div class="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {
+          features.map((feature, i) => {
+            const isWide = i < 2;
+            return (
+              <GlassCard
+                variant="dark"
+                class:list={["anim-rise", isWide ? "lg:col-span-2" : ""]}
+                style={`transition-delay: ${i * 0.1}s;`}
+              >
+                <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10">
+                  <Fragment set:html={iconMap[feature.icon]} />
+                </div>
+                <h3 class="mt-4 text-base font-semibold text-text-on-dark">{feature.title}</h3>
+                <p class="mt-2 text-sm leading-relaxed text-text-muted-on-dark">{feature.description}</p>
+              </GlassCard>
+            );
+          })
+        }
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+</div>

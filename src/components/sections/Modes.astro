@@ -2,17 +2,17 @@
 import ModeCard from "../ui/ModeCard.astro";
 ---
 
-<section class="px-6 py-24">
+<section class="section-normal px-6">
   <div class="mx-auto max-w-5xl">
-    <h2 class="reveal text-center text-3xl font-bold md:text-4xl">
-      Three modes for how you think
+    <h2 class="anim-slide-left text-left text-4xl font-bold md:text-5xl">
+      Your voice, your rules
     </h2>
-    <p class="reveal mx-auto mt-4 max-w-xl text-center text-text-muted">
+    <p class="anim-fade anim-delay-1 mt-4 max-w-xl text-text-muted">
       Whether you're writing an email, dumping thoughts, or prompting an AI — Natter adapts to your workflow.
     </p>
 
-    <div class="mt-16 grid gap-6 md:grid-cols-3">
-      <div class="reveal reveal-delay-1">
+    <div class="mt-16 flex flex-col gap-16">
+      <div class="anim-slide-left">
         <ModeCard
           title="Normal"
           badge="Free Trial"
@@ -23,7 +23,7 @@ import ModeCard from "../ui/ModeCard.astro";
         />
       </div>
 
-      <div class="reveal reveal-delay-2">
+      <div class="anim-slide-right">
         <ModeCard
           title="Ramble"
           badge="Pro"
@@ -31,10 +31,11 @@ import ModeCard from "../ui/ModeCard.astro";
           description="ADHD-friendly brain dumps. Speak freely and messily — Natter restructures your scattered thoughts into clear, organized text."
           before="ok so basically I have this idea where we could like do a thing where the app sends notifications but not annoying ones more like helpful reminders and maybe we could tie it into the calendar somehow I dunno"
           after="Feature idea: Smart notification system that sends helpful (non-intrusive) reminders, potentially integrated with the user's calendar."
+          reverse={true}
         />
       </div>
 
-      <div class="reveal reveal-delay-3">
+      <div class="anim-slide-left">
         <ModeCard
           title="Agentic Engineer"
           badge="Pro"

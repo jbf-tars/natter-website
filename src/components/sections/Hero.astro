@@ -2,38 +2,164 @@
 import DownloadButton from "../ui/DownloadButton.astro";
 ---
 
-<section class="relative flex min-h-screen items-center justify-center overflow-hidden px-6 pt-24">
-  <!-- Purple gradient glow -->
+<section class="relative flex min-h-screen items-center overflow-hidden px-6 pt-24">
+  <!-- Subtle gradient -->
   <div
-    class="pointer-events-none absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[600px] w-[600px] rounded-full bg-primary/20 blur-[120px]"
+    class="pointer-events-none absolute top-1/4 left-1/3 -translate-x-1/2 -translate-y-1/2 h-[600px] w-[600px] rounded-full bg-primary/5 blur-[120px]"
     aria-hidden="true"
   ></div>
 
-  <div class="relative z-10 mx-auto max-w-3xl text-center">
-    <h1 class="text-5xl font-bold leading-tight tracking-tight md:text-7xl">
-      Stop typing.<br />
-      <span class="text-primary">Start talking.</span>
-    </h1>
+  <div class="relative z-10 mx-auto max-w-6xl w-full grid md:grid-cols-2 gap-12 md:gap-16 items-center">
+    <!-- Left: Text -->
+    <div class="text-center md:text-left">
+      <!-- Waveform widget -->
+      <div class="anim-fade mb-6 flex justify-center md:justify-start">
+        <div class="flex items-center justify-center w-14 h-14 rounded-full bg-primary/8 border border-primary/15">
+          <div class="waveform-bars">
+            <span class="waveform-bar" style="--delay: 0s; --peak: 0.4"></span>
+            <span class="waveform-bar" style="--delay: 0.15s; --peak: 0.7"></span>
+            <span class="waveform-bar" style="--delay: 0.05s; --peak: 1"></span>
+            <span class="waveform-bar" style="--delay: 0.2s; --peak: 0.6"></span>
+            <span class="waveform-bar" style="--delay: 0.1s; --peak: 0.35"></span>
+          </div>
+        </div>
+      </div>
 
-    <p class="mx-auto mt-6 max-w-xl text-lg text-text-muted md:text-xl">
-      AI-powered voice-to-text that works in every app. Press a hotkey, speak
-      naturally, get clean text.
-    </p>
+      <h1 class="anim-scale font-serif leading-[1.05] tracking-tight text-5xl md:text-8xl">
+        <span class="font-light">Think</span><br />
+        <span class="font-bold text-primary">out loud.</span>
+      </h1>
 
-    <div class="mt-10 flex flex-col items-center gap-4">
-      <DownloadButton size="lg" />
-
-      <p data-download-alt class="text-sm text-text-muted">
-        Also available for <a href="/download" class="underline hover:text-text transition-colors">Windows</a>
+      <p class="anim-fade anim-delay-1 mx-auto md:mx-0 mt-6 max-w-xl text-lg font-light text-text-muted md:text-xl">
+        Voice-to-text that works in
+        <span class="rotating-text-wrapper">
+          <span data-rotating-text>
+            <span class="rotating-text-item active">Slack</span>
+            <span class="rotating-text-item">VS Code</span>
+            <span class="rotating-text-item">Gmail</span>
+            <span class="rotating-text-item">Notion</span>
+            <span class="rotating-text-item">ChatGPT</span>
+            <span class="rotating-text-item">every app</span>
+          </span>
+        </span>
       </p>
 
-      <p data-mobile-msg class="hidden text-sm text-text-muted">
-        Visit on your Mac or PC to download Natter.
+      <p class="anim-fade anim-delay-2 mt-3 text-sm text-text-muted max-w-lg mx-auto md:mx-0">
+        Dictate. Ramble. Build. Three modes for every way you work.
       </p>
 
-      <p class="text-xs text-text-muted/60">
-        Free 7-day trial. No signup required.
-      </p>
+      <div class="anim-scale anim-delay-3 mt-10 flex flex-col items-center md:items-start gap-4">
+        <DownloadButton size="lg" />
+
+        <p data-download-alt class="text-sm text-text-muted">
+          Also available for <a href="/download" class="underline hover:text-text transition-colors">Windows</a>
+        </p>
+
+        <p data-mobile-msg class="hidden text-sm text-text-muted">
+          Visit on your Mac or PC to download Natter.
+        </p>
+
+        <p class="text-xs text-text-muted/60">
+          Free 7-day trial · No signup required
+        </p>
+      </div>
+    </div>
+
+    <!-- Right: Speed comparison -->
+    <div class="anim-fade anim-delay-2 hidden md:block">
+      <div class="surface-card rounded-2xl p-8" id="speed-card">
+        <p class="text-sm font-semibold text-text-muted uppercase tracking-wider mb-6">Speed comparison</p>
+
+        <div class="mb-5">
+          <div class="flex justify-between items-baseline mb-2">
+            <span class="text-sm text-text-muted">Typing</span>
+            <span class="text-sm font-semibold text-text-muted">40 wpm</span>
+          </div>
+          <div class="h-3 w-full rounded-full bg-text/5 overflow-hidden">
+            <div class="h-full rounded-full bg-text/10 transition-none" data-speed="typing" style="width: 0%;"></div>
+          </div>
+        </div>
+
+        <div class="mb-6">
+          <div class="flex justify-between items-baseline mb-2">
+            <span class="text-sm text-text">Voice with Natter</span>
+            <span class="text-sm font-bold text-primary">150 wpm</span>
+          </div>
+          <div class="h-3 w-full rounded-full bg-text/5 overflow-hidden">
+            <div class="h-full rounded-full bg-primary transition-none" data-speed="voice" style="width: 0%;"></div>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-3 pt-4 border-t border-border">
+          <span class="font-serif text-4xl font-black text-primary" data-speed-counter>0</span>
+          <span class="text-lg font-black text-primary">x</span>
+          <span class="text-sm text-text-muted leading-tight">faster than<br />typing</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
+
+<script>
+  // Rotating text
+  function initRotatingText() {
+    const container = document.querySelector("[data-rotating-text]");
+    if (!container) return;
+    const items = container.querySelectorAll(".rotating-text-item");
+    if (items.length === 0) return;
+    let currentIndex = 0;
+    setInterval(() => {
+      const current = items[currentIndex] as HTMLElement;
+      const nextIndex = (currentIndex + 1) % items.length;
+      const next = items[nextIndex] as HTMLElement;
+      current.classList.remove("active");
+      current.classList.add("exit");
+      setTimeout(() => {
+        current.classList.remove("exit");
+        next.classList.add("active");
+        currentIndex = nextIndex;
+      }, 400);
+    }, 2500);
+  }
+
+  // Speed race
+  function initSpeedRace() {
+    const card = document.getElementById("speed-card");
+    if (!card) return;
+    const typingBar = card.querySelector('[data-speed="typing"]') as HTMLElement;
+    const voiceBar = card.querySelector('[data-speed="voice"]') as HTMLElement;
+    const counter = card.querySelector("[data-speed-counter]") as HTMLElement;
+    if (!typingBar || !voiceBar || !counter) return;
+    let hasAnimated = false;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !hasAnimated) {
+            hasAnimated = true;
+            observer.unobserve(entry.target);
+            typingBar.style.transition = "width 1.5s cubic-bezier(0.25, 0.1, 0.25, 1)";
+            typingBar.style.width = "27%";
+            setTimeout(() => {
+              voiceBar.style.transition = "width 1s cubic-bezier(0.16, 1, 0.3, 1)";
+              voiceBar.style.width = "100%";
+              const start = performance.now();
+              function update(now: number) {
+                const progress = Math.min((now - start) / 1200, 1);
+                const eased = 1 - Math.pow(1 - progress, 3);
+                counter.textContent = (3.75 * eased).toFixed(2);
+                if (progress < 1) requestAnimationFrame(update);
+                else counter.textContent = "3.75";
+              }
+              requestAnimationFrame(update);
+            }, 400);
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+    observer.observe(card);
+  }
+
+  initRotatingText();
+  initSpeedRace();
+</script>

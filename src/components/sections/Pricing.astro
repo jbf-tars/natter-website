@@ -2,17 +2,17 @@
 import PricingCard from "../ui/PricingCard.astro";
 ---
 
-<section id="pricing" class="px-6 py-24">
-  <div class="mx-auto max-w-3xl">
-    <h2 class="reveal text-center text-3xl font-bold md:text-4xl">
-      Simple, honest pricing
+<section id="pricing" class="section-normal px-6">
+  <div class="mx-auto max-w-4xl">
+    <h2 class="anim-rise text-center text-3xl font-bold md:text-4xl">
+      Pay once. Talk forever.
     </h2>
-    <p class="reveal mx-auto mt-4 max-w-xl text-center text-text-muted">
-      Pay once, use forever. No subscriptions, no hidden fees.
+    <p class="anim-fade anim-delay-1 mx-auto mt-4 max-w-xl text-center text-text-muted">
+      No subscriptions, no hidden fees. Other voice tools charge $10-25/month. Natter is $29. Once.
     </p>
 
-    <div class="mt-16 grid gap-6 sm:grid-cols-2">
-      <div class="reveal reveal-delay-1">
+    <div class="mt-16 grid gap-6 sm:grid-cols-5">
+      <div class="anim-rise anim-delay-1 sm:col-span-2">
         <PricingCard
           title="Free Trial"
           price="$0"
@@ -29,7 +29,12 @@ import PricingCard from "../ui/PricingCard.astro";
         />
       </div>
 
-      <div class="reveal reveal-delay-2">
+      <div class="anim-rise anim-delay-2 sm:col-span-3 relative">
+        <div class="absolute -top-4 left-1/2 -translate-x-1/2 z-10">
+          <span class="rounded-full bg-primary px-4 py-1 text-xs font-bold text-white uppercase tracking-wider">
+            Most Popular
+          </span>
+        </div>
         <PricingCard
           title="Natter Pro"
           price="$29"
@@ -48,8 +53,8 @@ import PricingCard from "../ui/PricingCard.astro";
       </div>
     </div>
 
-    <p class="reveal mt-8 text-center text-sm text-text-muted">
-      Purchase securely in-app after download. Start with the free trial — no credit card needed.
+    <p class="anim-fade mt-8 text-center text-sm text-text-muted">
+      Pay once, own forever. No subscriptions.
     </p>
   </div>
 </section>

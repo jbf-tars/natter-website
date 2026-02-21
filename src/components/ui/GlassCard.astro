@@ -1,11 +1,20 @@
 ---
 interface Props {
   class?: string;
+  style?: string;
+  variant?: "default" | "raised" | "trust" | "dark";
 }
 
-const { class: className = "" } = Astro.props;
+const { class: className = "", style = "", variant = "default" } = Astro.props;
+
+const surfaceClass = {
+  default: "surface-card",
+  raised: "surface-card",
+  trust: "surface-trust",
+  dark: "surface-card-dark",
+};
 ---
 
-<div class:list={["glass rounded-2xl p-6", className]}>
+<div class:list={["rounded-2xl p-6", surfaceClass[variant], className]} style={style}>
   <slot />
 </div>
