@@ -1,0 +1,55 @@
+---
+import PricingCard from "../ui/PricingCard.astro";
+---
+
+<section id="pricing" class="px-6 py-24">
+  <div class="mx-auto max-w-3xl">
+    <h2 class="reveal text-center text-3xl font-bold md:text-4xl">
+      Simple, honest pricing
+    </h2>
+    <p class="reveal mx-auto mt-4 max-w-xl text-center text-text-muted">
+      Pay once, use forever. No subscriptions, no hidden fees.
+    </p>
+
+    <div class="mt-16 grid gap-6 sm:grid-cols-2">
+      <div class="reveal reveal-delay-1">
+        <PricingCard
+          title="Free Trial"
+          price="$0"
+          period="for 7 days"
+          features={[
+            "Normal mode only",
+            "Full Whisper transcription",
+            "AI text cleanup",
+            "Global hotkey",
+            "Auto-paste",
+          ]}
+          cta="Download Free"
+          ctaHref="/download"
+        />
+      </div>
+
+      <div class="reveal reveal-delay-2">
+        <PricingCard
+          title="Natter Pro"
+          price="$29"
+          period="one-time"
+          features={[
+            "All 3 modes: Normal, Ramble, Agentic Engineer",
+            "Full Whisper transcription",
+            "AI text cleanup",
+            "Lifetime updates",
+            "Priority support",
+          ]}
+          cta="Download Free"
+          ctaHref="/download"
+          highlighted={true}
+        />
+      </div>
+    </div>
+
+    <p class="reveal mt-8 text-center text-sm text-text-muted">
+      Purchase securely in-app after download. Start with the free trial — no credit card needed.
+    </p>
+  </div>
+</section>

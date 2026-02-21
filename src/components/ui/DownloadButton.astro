@@ -1,0 +1,25 @@
+---
+interface Props {
+  class?: string;
+  size?: "lg" | "md";
+}
+
+const { class: className = "", size = "lg" } = Astro.props;
+
+const sizeClasses = {
+  lg: "px-8 py-4 text-lg",
+  md: "px-6 py-3 text-base",
+};
+---
+
+<a
+  data-download-btn
+  href="/download"
+  class:list={[
+    "inline-flex items-center justify-center gap-2 rounded-xl bg-primary font-semibold text-white hover:bg-dark transition-colors",
+    sizeClasses[size],
+    className,
+  ]}
+>
+  Download — Free
+</a>

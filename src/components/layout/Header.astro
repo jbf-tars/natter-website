@@ -1,0 +1,103 @@
+---
+const navLinks = [
+  { label: "Features", href: "/#features" },
+  { label: "Pricing", href: "/#pricing" },
+  { label: "FAQ", href: "/#faq" },
+];
+---
+
+<header
+  id="site-header"
+  class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+>
+  <div class="mx-auto max-w-6xl px-6 py-4 flex items-center justify-between">
+    <!-- Logo -->
+    <a href="/" class="flex items-center gap-2 text-xl font-bold text-text">
+      <img src="/favicon.svg" alt="Natter" class="h-8 w-8" />
+      Natter
+    </a>
+
+    <!-- Desktop Nav -->
+    <nav class="hidden md:flex items-center gap-8">
+      {
+        navLinks.map((link) => (
+          <a
+            href={link.href}
+            class="text-sm text-text-muted hover:text-text transition-colors"
+          >
+            {link.label}
+          </a>
+        ))
+      }
+      <a
+        href="/download"
+        class="rounded-lg bg-primary px-4 py-2 text-sm font-medium text-white hover:bg-dark transition-colors"
+      >
+        Download
+      </a>
+    </nav>
+
+    <!-- Mobile Hamburger -->
+    <button
+      id="mobile-menu-btn"
+      class="md:hidden flex flex-col gap-1.5 p-2"
+      aria-label="Toggle menu"
+    >
+      <span class="block h-0.5 w-6 bg-text transition-all duration-300"></span>
+      <span class="block h-0.5 w-6 bg-text transition-all duration-300"></span>
+      <span class="block h-0.5 w-6 bg-text transition-all duration-300"></span>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div
+    id="mobile-menu"
+    class="md:hidden hidden px-6 pb-6 pt-2"
+  >
+    <nav class="flex flex-col gap-4">
+      {
+        navLinks.map((link) => (
+          <a
+            href={link.href}
+            class="text-text-muted hover:text-text transition-colors"
+          >
+            {link.label}
+          </a>
+        ))
+      }
+      <a
+        href="/download"
+        class="rounded-lg bg-primary px-4 py-2 text-sm font-medium text-white text-center hover:bg-dark transition-colors"
+      >
+        Download
+      </a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const header = document.getElementById("site-header")!;
+  const mobileBtn = document.getElementById("mobile-menu-btn")!;
+  const mobileMenu = document.getElementById("mobile-menu")!;
+
+  // Glass effect on scroll
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 20) {
+      header.classList.add("glass");
+    } else {
+      header.classList.remove("glass");
+    }
+  });
+
+  // Mobile menu toggle
+  mobileBtn.addEventListener("click", () => {
+    mobileMenu.classList.toggle("hidden");
+  });
+
+  // Close mobile menu on link click
+  mobileMenu.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      mobileMenu.classList.add("hidden");
+    });
+  });
+</script>

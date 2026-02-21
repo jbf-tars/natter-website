@@ -1,0 +1,16 @@
+---
+import { faqs } from "../../data/faq";
+import FAQItem from "../ui/FAQItem.astro";
+---
+
+<section id="faq" class="px-6 py-24">
+  <div class="mx-auto max-w-2xl">
+    <h2 class="reveal text-center text-3xl font-bold md:text-4xl">
+      Frequently asked questions
+    </h2>
+
+    <div class="reveal mt-12">
+      {faqs.map((faq) => <FAQItem question={faq.question} answer={faq.answer} />)}
+    </div>
+  </div>
+</section>

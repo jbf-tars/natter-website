@@ -1,0 +1,39 @@
+---
+import DownloadButton from "../ui/DownloadButton.astro";
+---
+
+<section class="relative flex min-h-screen items-center justify-center overflow-hidden px-6 pt-24">
+  <!-- Purple gradient glow -->
+  <div
+    class="pointer-events-none absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[600px] w-[600px] rounded-full bg-primary/20 blur-[120px]"
+    aria-hidden="true"
+  ></div>
+
+  <div class="relative z-10 mx-auto max-w-3xl text-center">
+    <h1 class="text-5xl font-bold leading-tight tracking-tight md:text-7xl">
+      Stop typing.<br />
+      <span class="text-primary">Start talking.</span>
+    </h1>
+
+    <p class="mx-auto mt-6 max-w-xl text-lg text-text-muted md:text-xl">
+      AI-powered voice-to-text that works in every app. Press a hotkey, speak
+      naturally, get clean text.
+    </p>
+
+    <div class="mt-10 flex flex-col items-center gap-4">
+      <DownloadButton size="lg" />
+
+      <p data-download-alt class="text-sm text-text-muted">
+        Also available for <a href="/download" class="underline hover:text-text transition-colors">Windows</a>
+      </p>
+
+      <p data-mobile-msg class="hidden text-sm text-text-muted">
+        Visit on your Mac or PC to download Natter.
+      </p>
+
+      <p class="text-xs text-text-muted/60">
+        Free 7-day trial. No signup required.
+      </p>
+    </div>
+  </div>
+</section>
