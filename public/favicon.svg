@@ -1,19 +1,70 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <rect x="1" y="1" width="30" height="30" rx="4" fill="#C8A256" stroke="#6B4E1B" stroke-width="1"/>
-  <rect x="4" y="4" width="5" height="5" fill="#D4B06A"/>
-  <rect x="11" y="4" width="5" height="5" fill="#D4B06A"/>
-  <rect x="18" y="4" width="5" height="5" fill="#D4B06A"/>
-  <rect x="25" y="4" width="5" height="5" fill="#D4B06A" rx="0"/>
-  <rect x="4" y="11" width="5" height="5" fill="#D4B06A"/>
-  <rect x="11" y="11" width="5" height="5" fill="#D4B06A"/>
-  <rect x="18" y="11" width="5" height="5" fill="#D4B06A"/>
-  <rect x="25" y="11" width="5" height="5" fill="#D4B06A"/>
-  <rect x="4" y="18" width="5" height="5" fill="#7A3F14"/>
-  <rect x="11" y="18" width="5" height="5" fill="#7A3F14"/>
-  <rect x="18" y="18" width="5" height="5" fill="#7A3F14"/>
-  <rect x="25" y="18" width="5" height="5" fill="#7A3F14"/>
-  <rect x="4" y="25" width="5" height="5" fill="#5C2E0E"/>
-  <rect x="11" y="25" width="5" height="5" fill="#5C2E0E"/>
-  <rect x="18" y="25" width="5" height="5" fill="#5C2E0E"/>
-  <rect x="25" y="25" width="5" height="5" fill="#5C2E0E"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Waffle base with rounded edges -->
+  <rect x="4" y="4" width="56" height="56" rx="8" fill="#C8A256" stroke="#8B6914" stroke-width="2"/>
+
+  <!-- Flowing waveform bars (like voice recording) -->
+  <!-- Center bar (tallest) -->
+  <rect x="28" y="14" width="8" height="36" rx="4" fill="#FFFDF5" opacity="0.95">
+    <animate attributeName="height" values="36;42;36" dur="1.2s" repeatCount="indefinite"/>
+    <animate attributeName="y" values="14;11;14" dur="1.2s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Left bars (decreasing height) -->
+  <rect x="18" y="20" width="6" height="24" rx="3" fill="#FFFDF5" opacity="0.85">
+    <animate attributeName="height" values="24;28;24" dur="1.4s" repeatCount="indefinite"/>
+    <animate attributeName="y" values="20;18;20" dur="1.4s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="10" y="26" width="5" height="12" rx="2.5" fill="#FFFDF5" opacity="0.7">
+    <animate attributeName="height" values="12;16;12" dur="1.6s" repeatCount="indefinite"/>
+    <animate attributeName="y" values="26;24;26" dur="1.6s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Right bars (decreasing height) -->
+  <rect x="40" y="20" width="6" height="24" rx="3" fill="#FFFDF5" opacity="0.85">
+    <animate attributeName="height" values="24;28;24" dur="1.3s" repeatCount="indefinite"/>
+    <animate attributeName="y" values="20;18;20" dur="1.3s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="49" y="26" width="5" height="12" rx="2.5" fill="#FFFDF5" opacity="0.7">
+    <animate attributeName="height" values="12;16;12" dur="1.5s" repeatCount="indefinite"/>
+    <animate attributeName="y" values="26;24;26" dur="1.5s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Dripping syrup effect at bottom -->
+  <defs>
+    <linearGradient id="syrupGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#D4A574;stop-opacity:0.9" />
+      <stop offset="100%" style="stop-color:#8B6914;stop-opacity:1" />
+    </linearGradient>
+    <filter id="goo">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur" />
+      <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+    </filter>
+  </defs>
+
+  <!-- Syrup drips -->
+  <g filter="url(#goo)" opacity="0.8">
+    <!-- Left drip -->
+    <circle cx="14" cy="54" r="3" fill="url(#syrupGradient)">
+      <animate attributeName="cy" values="52;54;52" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <ellipse cx="14" cy="50" rx="2" ry="4" fill="url(#syrupGradient)">
+      <animate attributeName="ry" values="4;6;4" dur="3s" repeatCount="indefinite"/>
+    </ellipse>
+
+    <!-- Center drip -->
+    <circle cx="32" cy="56" r="4" fill="url(#syrupGradient)">
+      <animate attributeName="cy" values="54;56;54" dur="2.5s" repeatCount="indefinite"/>
+    </circle>
+    <ellipse cx="32" cy="51" rx="2.5" ry="5" fill="url(#syrupGradient)">
+      <animate attributeName="ry" values="5;7;5" dur="2.5s" repeatCount="indefinite"/>
+    </ellipse>
+
+    <!-- Right drip -->
+    <circle cx="50" cy="54" r="3" fill="url(#syrupGradient)">
+      <animate attributeName="cy" values="52;54;52" dur="3.2s" repeatCount="indefinite"/>
+    </circle>
+    <ellipse cx="50" cy="50" rx="2" ry="4" fill="url(#syrupGradient)">
+      <animate attributeName="ry" values="4;6;4" dur="3.2s" repeatCount="indefinite"/>
+    </ellipse>
+  </g>
 </svg>

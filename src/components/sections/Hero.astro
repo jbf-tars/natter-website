@@ -12,7 +12,7 @@ import DownloadButton from "../ui/DownloadButton.astro";
   <div class="relative z-10 mx-auto max-w-6xl w-full grid md:grid-cols-2 gap-12 md:gap-16 items-center">
     <!-- Left: Text -->
     <div class="text-center md:text-left">
-      <!-- Waveform widget -->
+      <!-- Waveform widget (clean, no drips) -->
       <div class="anim-fade mb-6 flex justify-center md:justify-start">
         <div class="flex items-center justify-center w-14 h-14 rounded-full bg-primary/8 border border-primary/15">
           <div class="waveform-bars">
@@ -80,13 +80,13 @@ import DownloadButton from "../ui/DownloadButton.astro";
           </div>
         </div>
 
-        <div class="mb-6">
+        <div class="mb-6 syrup-pool">
           <div class="flex justify-between items-baseline mb-2">
             <span class="text-sm text-text">Voice with Waffler</span>
             <span class="text-sm font-bold text-primary">150 wpm</span>
           </div>
-          <div class="h-3 w-full rounded-full bg-text/5 overflow-hidden">
-            <div class="h-full rounded-full bg-primary transition-none" data-speed="voice" style="width: 0%;"></div>
+          <div class="h-3 w-full rounded-full bg-text/5 overflow-hidden relative">
+            <div class="h-full rounded-full transition-none relative overflow-hidden" data-speed="voice" style="width: 0%; background: linear-gradient(90deg, rgba(200, 162, 86, 0.8) 0%, rgba(212, 176, 106, 1) 100%);"></div>
           </div>
         </div>
 
