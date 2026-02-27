@@ -28,5 +28,52 @@ const variantClasses = {
     className,
   ]}
 >
-  Download — Free
+  <span data-btn-text>Download — Free</span>
 </a>
+
+<script>
+  function detectPlatform() {
+    const userAgent = window.navigator.userAgent.toLowerCase();
+    const isMac = /mac|iphone|ipad|ipod/.test(userAgent);
+    const isWindows = /win/.test(userAgent);
+
+    const downloadBtns = document.querySelectorAll('[data-download-btn] [data-btn-text]');
+    const downloadAlt = document.querySelector('[data-download-alt]');
+    const mobileMsg = document.querySelector('[data-mobile-msg]');
+
+    // Mobile detection
+    const isMobile = /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/.test(userAgent);
+
+    if (isMobile) {
+      // Hide download button and alt text, show mobile message
+      downloadBtns.forEach(btn => {
+        const btnElement = btn.closest('[data-download-btn]');
+        if (btnElement) btnElement.style.display = 'none';
+      });
+      if (downloadAlt) downloadAlt.style.display = 'none';
+      if (mobileMsg) mobileMsg.classList.remove('hidden');
+    } else {
+      // Desktop: update button text based on platform
+      downloadBtns.forEach(btn => {
+        if (isWindows) {
+          btn.textContent = 'Download for Windows';
+        } else if (isMac) {
+          btn.textContent = 'Download for macOS';
+        } else {
+          btn.textContent = 'Download — Free';
+        }
+      });
+
+      // Update alternative platform text
+      if (downloadAlt && isWindows) {
+        downloadAlt.innerHTML = 'Also available for <a href="/download" class="underline hover:text-text transition-colors">macOS</a>';
+      }
+    }
+  }
+
+  // Run on page load
+  detectPlatform();
+
+  // Re-run on navigation (for Astro view transitions)
+  document.addEventListener('astro:page-load', detectPlatform);
+</script>
