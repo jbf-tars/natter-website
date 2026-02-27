@@ -4,9 +4,9 @@
 
 @theme {
   /* Brand */
-  --color-primary: #6D3BF5;
-  --color-primary-hover: #5B2ED4;
-  --color-accent: #a78bfa;
+  --color-primary: #C8A256;
+  --color-primary-hover: #B8923E;
+  --color-accent: #D4B06A;
   --color-amber: #F0C050;
   --color-amber-hover: #E0AD3A;
 
@@ -75,13 +75,13 @@ body {
 
 .surface-trust {
   background: var(--color-surface);
-  border: 1px solid rgba(109, 59, 245, 0.15);
+  border: 1px solid rgba(200, 162, 86, 0.15);
 }
 
 .surface-pricing-highlighted {
-  background: linear-gradient(135deg, rgba(109, 59, 245, 0.08), rgba(109, 59, 245, 0.03));
-  border: 1px solid rgba(109, 59, 245, 0.25);
-  box-shadow: 0 0 40px rgba(109, 59, 245, 0.08), 0 4px 24px rgba(0, 0, 0, 0.06);
+  background: linear-gradient(135deg, rgba(200, 162, 86, 0.08), rgba(200, 162, 86, 0.03));
+  border: 1px solid rgba(200, 162, 86, 0.25);
+  box-shadow: 0 0 40px rgba(200, 162, 86, 0.08), 0 4px 24px rgba(0, 0, 0, 0.06);
 }
 
 .header-glass {
@@ -290,7 +290,7 @@ body {
 
 .surface-trust:hover {
   transform: translateY(-2px);
-  border-color: rgba(109, 59, 245, 0.25);
+  border-color: rgba(200, 162, 86, 0.25);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
 }
 
@@ -302,7 +302,7 @@ body {
 
 .surface-pricing-highlighted:hover {
   transform: translateY(-3px);
-  box-shadow: 0 0 60px rgba(109, 59, 245, 0.12), 0 8px 32px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 0 60px rgba(200, 162, 86, 0.12), 0 8px 32px rgba(0, 0, 0, 0.08);
 }
 
 @media (prefers-reduced-motion: reduce) {

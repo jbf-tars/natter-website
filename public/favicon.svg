@@ -1,21 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
-  <!-- Background with subtle gradient -->
-  <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#7c3aed"/>
-      <stop offset="100%" stop-color="#6d28d9"/>
-    </linearGradient>
-    <linearGradient id="bubble" x1="8" y1="9" x2="24" y2="22" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#ffffff"/>
-      <stop offset="100%" stop-color="#e8e0f7"/>
-    </linearGradient>
-  </defs>
-  <rect width="32" height="32" rx="8" fill="url(#bg)"/>
-  <!-- Speech bubble -->
-  <path d="M7 11.5a2.5 2.5 0 0 1 2.5-2.5h13a2.5 2.5 0 0 1 2.5 2.5v6a2.5 2.5 0 0 1-2.5 2.5H19l-3 3.5-3-3.5H9.5A2.5 2.5 0 0 1 7 17.5v-6z" fill="url(#bubble)"/>
-  <!-- Sound wave lines -->
-  <line x1="12" y1="12.5" x2="12" y2="16.5" stroke="#7c3aed" stroke-width="1.8" stroke-linecap="round"/>
-  <line x1="15" y1="11" x2="15" y2="18" stroke="#7c3aed" stroke-width="1.8" stroke-linecap="round"/>
-  <line x1="18" y1="12.5" x2="18" y2="16.5" stroke="#7c3aed" stroke-width="1.8" stroke-linecap="round"/>
-  <line x1="21" y1="13.5" x2="21" y2="15.5" stroke="#7c3aed" stroke-width="1.8" stroke-linecap="round"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <rect x="1" y="1" width="30" height="30" rx="4" fill="#C8A256" stroke="#6B4E1B" stroke-width="1"/>
+  <rect x="4" y="4" width="5" height="5" fill="#D4B06A"/>
+  <rect x="11" y="4" width="5" height="5" fill="#D4B06A"/>
+  <rect x="18" y="4" width="5" height="5" fill="#D4B06A"/>
+  <rect x="25" y="4" width="5" height="5" fill="#D4B06A" rx="0"/>
+  <rect x="4" y="11" width="5" height="5" fill="#D4B06A"/>
+  <rect x="11" y="11" width="5" height="5" fill="#D4B06A"/>
+  <rect x="18" y="11" width="5" height="5" fill="#D4B06A"/>
+  <rect x="25" y="11" width="5" height="5" fill="#D4B06A"/>
+  <rect x="4" y="18" width="5" height="5" fill="#7A3F14"/>
+  <rect x="11" y="18" width="5" height="5" fill="#7A3F14"/>
+  <rect x="18" y="18" width="5" height="5" fill="#7A3F14"/>
+  <rect x="25" y="18" width="5" height="5" fill="#7A3F14"/>
+  <rect x="4" y="25" width="5" height="5" fill="#5C2E0E"/>
+  <rect x="11" y="25" width="5" height="5" fill="#5C2E0E"/>
+  <rect x="18" y="25" width="5" height="5" fill="#5C2E0E"/>
+  <rect x="25" y="25" width="5" height="5" fill="#5C2E0E"/>
 </svg>

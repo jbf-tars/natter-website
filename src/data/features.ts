@@ -3,7 +3,7 @@ export const features = [
     icon: "keyboard",
     title: "Global Hotkey",
     description:
-      "Press your hotkey from any app. Natter activates instantly — no window switching needed.",
+      "Press your hotkey from any app. Waffler activates instantly — no window switching needed.",
   },
   {
     icon: "mic",
